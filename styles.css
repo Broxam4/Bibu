@@ -15,163 +15,60 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}}
 .portrait-image{display:block;width:100%;aspect-ratio:.76;object-fit:cover;object-position:center 28%;}.contact-phone{color:#fff;text-decoration:none;font-weight:700;font-size:15px}.contact-phone:hover{text-decoration:underline}
 
-/* Review proposal: redesigned hero with no overlapping content */
-.hero{
-  padding-top:88px;
-  min-height:calc(100vh - 78px);
-  display:grid;
-  align-items:center;
-  overflow:hidden;
-}
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:clamp(44px,7vw,96px);
-  align-items:center;
-}
-
-.hero-aside{
-  display:grid;
-  justify-items:center;
-  gap:18px;
-}
-
-.hero-portrait-wrap{
+/* Review hero: keep floating tiles, with more breathing room */
+.hero-visual{
   position:relative;
-  width:100%;
+  min-height:620px;
   display:grid;
   place-items:center;
-  padding:20px 0 0;
+  overflow:visible;
 }
 
-.hero-ring{
-  position:absolute;
-  width:520px;
-  height:520px;
-  border-radius:50%;
-  background:linear-gradient(135deg,#dce8df,#aebfb5);
-  z-index:1;
+.portrait-card{
+  width:min(390px,78%);
 }
 
-.portrait-card-clean{
-  position:relative;
-  width:min(360px,78%);
-  z-index:2;
-  border-radius:220px 220px 26px 26px;
-  overflow:hidden;
-  background:#d7dfda;
-  box-shadow:0 24px 60px rgba(19,44,38,.13);
+.note-one{
+  left:-46px;
+  top:120px;
 }
 
-.portrait-image{
-  display:block;
-  width:100%;
-  aspect-ratio:.76;
-  object-fit:cover;
-  object-position:center 28%;
-}
-
-.hero-info-card{
-  position:relative;
-  z-index:3;
-  width:min(360px,78%);
-  padding:20px 24px 22px;
-  border:1px solid rgba(20,34,31,.08);
-  border-radius:18px;
-  background:rgba(255,255,255,.96);
-  box-shadow:0 14px 40px rgba(26,45,40,.10);
-}
-
-.hero-info-card p{
-  margin:0 0 4px;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:22px;
-  line-height:1.2;
-}
-
-.hero-info-card span{
-  color:var(--soft);
-  font-size:14px;
-}
-
-.hero-focus-grid{
-  position:relative;
-  z-index:3;
-  width:min(420px,100%);
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-}
-
-.hero-focus-card{
-  min-height:128px;
-  padding:18px;
-  border:1px solid rgba(20,34,31,.08);
-  border-radius:16px;
-  background:rgba(247,245,239,.96);
-  box-shadow:0 14px 40px rgba(26,45,40,.10);
-}
-
-.hero-focus-card strong{
-  display:block;
-  font-size:15px;
-  line-height:1.45;
-}
-
-.hero-focus-card .note-kicker{
-  display:block;
-  margin-bottom:8px;
-  color:var(--soft);
-  font-size:10px;
-  font-weight:800;
-  text-transform:uppercase;
-  letter-spacing:.14em;
+.note-two{
+  right:-48px;
+  bottom:150px;
 }
 
 @media(max-width:900px){
-  .hero{
-    min-height:auto;
+  .hero-visual{
+    min-height:590px;
   }
 
-  .hero-grid{
-    grid-template-columns:1fr;
-    gap:40px;
+  .note-one{
+    left:0;
+    top:105px;
   }
 
-  .hero-ring{
-    width:460px;
-    height:460px;
-  }
-
-  .portrait-card-clean,
-  .hero-info-card{
-    width:min(340px,80%);
-  }
-
-  .hero-focus-grid{
-    width:min(360px,90%);
-    grid-template-columns:1fr;
+  .note-two{
+    right:0;
+    bottom:155px;
   }
 }
 
 @media(max-width:650px){
-  .hero{
-    padding-top:42px;
-  }
-
-  .hero-ring{
-    width:360px;
-    height:360px;
-  }
-
-  .portrait-card-clean,
-  .hero-info-card,
-  .hero-focus-grid{
-    width:min(320px,88%);
-  }
-
-  .hero-focus-card{
+  .hero-visual{
     min-height:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+  }
+
+  .portrait-card{
+    width:min(320px,86%);
+  }
+
+  .floating-note{
+    position:static;
+    width:min(280px,90%);
   }
 }
